@@ -1,0 +1,22 @@
+﻿
+syntax = "proto3";
+
+option csharp_namespace = "Backend.Protos";
+
+service CarService {
+	rpc GetAll(GetAllRequest) returns (GetAllReply);
+}
+
+message GetAllRequest {
+
+}
+message GetAllReply {
+	repeated CarDto cars = 1;
+}
+message CarDto {
+	reserved 3;
+	
+	string make = 1;
+	string model = 2;
+	int32 kilometers = 4;
+}
