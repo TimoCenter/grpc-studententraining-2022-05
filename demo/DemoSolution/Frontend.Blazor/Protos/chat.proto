@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Frontend.Blazor.Protos";
+
+service ChatService {
+	rpc Join(stream MessageDto) returns (stream MessageDto);
+}
+
+message MessageDto {
+	string name = 1;
+	string content = 2;
+}

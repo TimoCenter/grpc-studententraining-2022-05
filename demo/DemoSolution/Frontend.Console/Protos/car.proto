@@ -3,8 +3,10 @@ syntax = "proto3";
 
 option csharp_namespace = "Frontend.Console.Protos";
 
+import "google/protobuf/Empty.proto";
+
 service CarService {
-	rpc GetAll(GetAllRequest) returns (GetAllReply);
+	rpc GetAll(google.protobuf.Empty) returns (GetAllReply);
 }
 
 message GetAllRequest {
@@ -19,4 +21,6 @@ message CarDto {
 	string make = 1;
 	string model = 2;
 	int32 kilometers = 4;
+
+
 }

@@ -1,0 +1,19 @@
+﻿@page "/chat"
+
+<input @bind-value="Username" />
+<input @bind-value="Content" />
+
+
+<button @onclick="Join">Start chatting</button> |
+<button @onclick="Say">Say</button> |
+<button @onclick="Leave">Leave</button>
+
+<ol>
+    @foreach(var message in Messages)
+    {
+        <li>
+            <strong>@message.Name</strong>:
+            @message.Content
+        </li>
+    }
+</ol>
